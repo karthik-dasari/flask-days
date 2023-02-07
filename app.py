@@ -1,4 +1,14 @@
 from flask import Flask, render_template, request
+from mysql.connector import connect
+
+con=connect(host='localhost'
+            ,port=3306
+            ,database='cse'
+            ,user='root')
+
+cur=con.cursor()
+cur.execute("insert into data values('Rahul','1' )")
+con.commit()
 
 abc = Flask(__name__)
 
